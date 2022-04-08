@@ -5,7 +5,7 @@
 <hr>
 
 <div>
-  <a href="/movies/new">Add a new movie</a>
+  <a href="<%= new_movie_path %>">Add a new movie</a>
 </div>
 
 <hr>
@@ -53,12 +53,12 @@
     <td>
       <%= time_ago_in_words(a_movie.created_at) %> ago
     </td>
-    <td>
+    <td> 
       <%= time_ago_in_words(a_movie.updated_at) %> ago
     </td>
 
     <td>
-      <a href="/movies/<%= a_movie.id %>">
+      <a href="<%= movie_path(a_movie) %>">
         Show details
       </a>
     </td>

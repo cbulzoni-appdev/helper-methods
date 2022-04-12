@@ -8,5 +8,9 @@ Rails.application.routes.draw do
 
   resources :movies
 
+  # Routes for the Director resource:
+
+  resources :directors
+
   #------------------------------
 end

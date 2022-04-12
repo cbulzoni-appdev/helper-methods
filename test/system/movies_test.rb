@@ -25,18 +25,18 @@ class MoviesTest < ApplicationSystemTestCase
   test "updating a Movie" do
     @movie = movies(:one)
 
-    visit  edit_movie_path(@movie)
+    visit "/movies/#{@movie.id}/edit"
 
-    fill_in :Description, with: "Some other description"
-    fill_in :Title, with: "Some other title"
+    fill_in "Description", with: "Some other description"
+    fill_in "Title", with: "Some other title"
 
     click_on "Update Movie"
     
     assert_text "Movie updated successfully"
 
     @movie.reload # Why do we need this?
-    assert_equal "Some other description", @movie.title
-    assert_equal "Some other title", @movie.description
+    assert_equal "Some other title", @movie.title
+    assert_equal "Some other description", @movie.description
   end
 
   test "destroying a Movie" do
